@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Zap, LayoutDashboard, Sun, Target, LineChart, Plus, Settings, HelpCircle } from 'lucide-react';
+import { LayoutDashboard, Sun, Target, LineChart, Plus, Settings, HelpCircle } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
