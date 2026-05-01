@@ -30,6 +30,8 @@ interface DataContextType {
   addRitual: (ritual: Omit<Ritual, 'id'>) => void;
   deleteRitual: (id: string | number) => void;
   incrementGoal: (id: number) => void;
+  decrementGoal: (id: number) => void;
+  deleteGoal: (id: number) => void;
   addGoal: (title: string) => void;
 }
 
@@ -118,6 +120,18 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setGoals(goals.map(g => g.id == id ? { ...g, progress: newProgress } : g));
   };
 
+  const decrementGoal = (id: number) => {
+    const goal = goals.find(g => g.id == id);
+    if (!goal) return;
+    
+    const newProgress = Math.max(goal.progress - 10, 0);
+    setGoals(goals.map(g => g.id == id ? { ...g, progress: newProgress } : g));
+  };
+
+  const deleteGoal = (id: number) => {
+    setGoals(goals.filter(g => g.id != id));
+  };
+
   const addRitual = (ritual: Omit<Ritual, 'id'>) => {
     const newRitual = { ...ritual, id: Date.now() };
     setRituals([...rituals, newRitual]);
@@ -138,7 +152,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <DataContext.Provider value={{ goals, setGoals, rituals, history, updateRitualStatus, addRitual, deleteRitual, incrementGoal, addGoal }}>
+    <DataContext.Provider value={{ goals, setGoals, rituals, history, updateRitualStatus, addRitual, deleteRitual, incrementGoal, decrementGoal, deleteGoal, addGoal }}>
       {children}
     </DataContext.Provider>
   );
