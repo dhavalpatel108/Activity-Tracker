@@ -42,7 +42,7 @@ export const Login: React.FC = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Elena" 
-                className="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary text-white font-bold pl-12 pr-4 py-4 rounded-2xl outline-none transition-all placeholder:text-slate-500 font-body-lg"
+                className="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary text-[#00e5ff] font-bold pl-12 pr-4 py-4 rounded-2xl outline-none transition-all placeholder:text-slate-500 font-body-lg selection:bg-primary selection:text-on-primary drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]"
                 autoFocus
                 required
               />
