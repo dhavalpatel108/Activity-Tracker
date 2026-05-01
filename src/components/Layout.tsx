@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { TopNav } from './TopNav';
-import { LayoutDashboard, Sun, Target, User } from 'lucide-react';
+import { LayoutDashboard, Sun, Target, LineChart } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -35,9 +35,9 @@ export const Layout: React.FC = () => {
           <Target size={24} />
           <span className="text-[10px] font-label-sm">Goals</span>
         </NavLink>
-        <NavLink to="/profile" className={({ isActive }) => cn("flex flex-col items-center gap-1 p-2 rounded-xl transition-colors", isActive ? "text-primary bg-primary/10" : "text-secondary hover:bg-surface-variant")}>
-          <User size={24} />
-          <span className="text-[10px] font-label-sm">Profile</span>
+        <NavLink to="/analytics" className={({ isActive }) => cn("flex flex-col items-center gap-1 p-2 rounded-xl transition-colors", isActive ? "text-primary bg-primary/10" : "text-secondary hover:bg-surface-variant")}>
+          <LineChart size={24} />
+          <span className="text-[10px] font-label-sm">Analytics</span>
         </NavLink>
       </nav>
     </div>
