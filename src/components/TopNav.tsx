@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Search, Bell, Settings, Palette, LogOut, User } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useUser } from '../context/UserContext';
+import logo from '../assets/logo.png';
 
 export const TopNav: React.FC = () => {
   const { theme, setTheme, isAuto, setIsAuto } = useTheme();
@@ -33,8 +34,11 @@ export const TopNav: React.FC = () => {
 
   return (
     <header className="fixed top-0 right-0 left-0 lg:left-64 h-16 flex justify-between items-center px-4 lg:px-8 z-40 bg-surface-container-lowest/60 backdrop-blur-md border-b border-outline-variant transition-colors duration-500">
-      <div className="flex items-center">
-        <span className="text-headline-md font-bold tracking-tight text-primary">Vitality</span>
+      <div className="flex items-center gap-2">
+        <div className="lg:hidden w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-surface border border-outline-variant shadow-sm">
+          <img src={logo} alt="Circadian Logo" className="w-full h-full object-cover" />
+        </div>
+        <span className="text-headline-md font-bold tracking-tight text-primary">Circadian</span>
       </div>
       <div className="flex items-center gap-6">
         <div className="hidden md:flex bg-surface-container-high px-4 py-1.5 rounded-full items-center gap-2">

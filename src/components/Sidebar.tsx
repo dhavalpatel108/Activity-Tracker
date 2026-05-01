@@ -4,6 +4,8 @@ import { Zap, LayoutDashboard, Sun, Target, LineChart, Plus, Settings, HelpCircl
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
+import logo from '../assets/logo.png';
+
 function cn(...inputs: (string | undefined | null | false)[]) {
   return twMerge(clsx(inputs));
 }
@@ -19,11 +21,11 @@ export const Sidebar: React.FC = () => {
   return (
     <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-full p-4 gap-4 bg-surface-container-lowest w-64 border-r border-outline-variant z-50 transition-colors duration-500">
       <div className="flex items-center gap-3 px-2 py-4">
-        <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-          <Zap className="text-on-primary" size={24} />
+        <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-lg shadow-primary/20 flex items-center justify-center bg-surface">
+          <img src={logo} alt="Circadian Logo" className="w-full h-full object-cover scale-110" />
         </div>
         <div>
-          <h1 className="font-headline-md text-primary font-bold">Circadian</h1>
+          <h1 className="font-headline-md text-primary font-bold leading-tight">Circadian</h1>
           <p className="text-label-sm text-secondary">Rise & Shine</p>
         </div>
       </div>

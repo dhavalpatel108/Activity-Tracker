@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 import { User, ArrowRight } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 export const Login: React.FC = () => {
   const [name, setName] = useState('');
@@ -20,8 +21,8 @@ export const Login: React.FC = () => {
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md bg-surface-container-lowest p-8 md:p-12 rounded-[40px] shadow-xl border border-secondary-fixed text-center space-y-8">
         
-        <div className="mx-auto w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-on-primary shadow-lg shadow-primary/20">
-          <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
+        <div className="mx-auto w-24 h-24 rounded-3xl overflow-hidden shadow-2xl shadow-primary/30 flex items-center justify-center bg-surface border border-outline-variant">
+          <img src={logo} alt="Circadian Logo" className="w-full h-full object-cover scale-110" />
         </div>
 
         <div className="space-y-3">
