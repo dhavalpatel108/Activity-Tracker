@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.05);
+        }
+        .inner-glow-gold {
+            box-shadow: inset 0 1px 0 0 rgba(233, 193, 118, 0.1);
+        }
+        .amber-glow {
+            filter: blur(8px);
+            background: #e9c176;
+            opacity: 0.4;
+        }
+        body {
+            background-color: #131313;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "secondary-container": "#414b45",
+                "surface-dim": "#131313",
+                "on-primary-fixed-variant": "#56404c",
+                "surface-bright": "#393939",
+                "on-secondary-fixed-variant": "#3f4943",
+                "tertiary-container": "#412d00",
+                "outline-variant": "#4d4448",
+                "primary-container": "#3e2a35",
+                "on-primary": "#3f2a35",
+                "inverse-primary": "#705864",
+                "on-primary-container": "#ac909e",
+                "secondary-fixed-dim": "#bec9c0",
+                "on-surface-variant": "#d0c3c8",
+                "primary": "#ddbecd",
+                "on-tertiary-fixed-variant": "#5d4201",
+                "on-secondary": "#29332d",
+                "on-error": "#690005",
+                "surface-container": "#20201f",
+                "surface-container-high": "#2a2a2a",
+                "on-primary-fixed": "#281620",
+                "inverse-on-surface": "#313030",
+                "surface": "#131313",
+                "on-secondary-container": "#b0bbb2",
+                "surface-container-highest": "#353535",
+                "tertiary-fixed-dim": "#e9c176",
+                "primary-fixed-dim": "#ddbecd",
+                "error": "#ffb4ab",
+                "on-surface": "#e5e2e1",
+                "inverse-surface": "#e5e2e1",
+                "secondary": "#bec9c0",
+                "surface-container-lowest": "#0e0e0e",
+                "error-container": "#93000a",
+                "on-tertiary-fixed": "#261900",
+                "on-secondary-fixed": "#141e18",
+                "surface-tint": "#ddbecd",
+                "outline": "#998e92",
+                "tertiary-fixed": "#ffdea5",
+                "tertiary": "#e9c176",
+                "on-tertiary": "#412d00",
+                "background": "#131313",
+                "surface-container-low": "#1c1b1b",
+                "on-background": "#e5e2e1",
+                "on-tertiary-container": "#b7934d",
+                "secondary-fixed": "#dae5dc",
+                "primary-fixed": "#fadae9",
+                "surface-variant": "#353535",
+                "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "unit": "8px",
+                "margin-page": "48px",
+                "stack-lg": "32px",
+                "container-max": "1440px",
+                "gutter": "24px"
+              },
+              "fontFamily": {
+                "headline-md": ["Noto Serif"],
+                "display-lg": ["Noto Serif"],
+                "body-md": ["Manrope"],
+                "label-sm": ["Manrope"],
+                "body-lg": ["Manrope"]
+              },
+              "fontSize": {
+                "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface selection:bg-tertiary selection:text-on-tertiary">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 z-[60] bg-slate-950 border-r border-white/5 shadow-[4px_0_24px_rgba(0,0,0,0.5)] flex flex-col py-8 font-serif text-slate-200">
+<div class="px-8 mb-12">
+<h1 class="text-2xl font-black text-amber-200 italic">Nocturne</h1>
+<p class="text-slate-500 text-xs tracking-widest mt-1">Deep Work &amp; Reflection</p>
+</div>
+<nav class="flex-grow flex flex-col">
+<div class="flex items-center gap-4 py-4 px-8 bg-white/5 text-amber-200 border-r-2 border-amber-200 font-semibold ease-out duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="flex items-center gap-4 py-4 px-8 text-slate-500 hover:text-slate-200 hover:bg-white/[0.02] transition-all ease-out duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</div>
+<div class="flex items-center gap-4 py-4 px-8 text-slate-500 hover:text-slate-200 hover:bg-white/[0.02] transition-all ease-out duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Routines</span>
+</div>
+<div class="flex items-center gap-4 py-4 px-8 text-slate-500 hover:text-slate-200 hover:bg-white/[0.02] transition-all ease-out duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span>Goals</span>
+</div>
+<div class="flex items-center gap-4 py-4 px-8 text-slate-500 hover:text-slate-200 hover:bg-white/[0.02] transition-all ease-out duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span>Settings</span>
+</div>
+</nav>
+<div class="px-8 mt-auto flex flex-col gap-6">
+<button class="w-full bg-tertiary text-on-tertiary py-3 rounded-lg font-bold hover:bg-tertiary-fixed transition-all active:scale-95">
+                Log Activity
+            </button>
+<div class="flex items-center gap-4 py-4 text-slate-500 hover:text-slate-200 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/10 shadow-sm shadow-black/40 flex justify-between items-center px-12 h-20 font-serif tracking-wide text-slate-100">
+<div class="flex items-center gap-8">
+<h2 class="text-xl font-bold text-amber-200">Nocturne Routine</h2>
+<div class="hidden lg:flex gap-6 text-sm">
+<span class="text-amber-200 border-b-2 border-amber-200 pb-1 cursor-pointer">Overview</span>
+<span class="text-slate-400 hover:text-slate-200 transition-colors cursor-pointer">Journal</span>
+<span class="text-slate-400 hover:text-slate-200 transition-colors cursor-pointer">Focus Zone</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-white/5 border-none rounded-full px-6 py-2 text-sm w-64 focus:ring-1 focus:ring-amber-200/50 transition-all text-slate-300" placeholder="Search insights..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 text-lg">search</span>
+</div>
+<div class="flex items-center gap-4 border-l border-white/10 pl-6">
+<span class="material-symbols-outlined text-slate-400 hover:text-amber-200 transition-all cursor-pointer active:scale-95" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-amber-200 transition-all cursor-pointer active:scale-95" data-icon="settings">settings</span>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-white/20">
+<img alt="Executive User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a sophisticated executive male in his 40s, looking thoughtful and composed. High-end, moody lighting with deep shadows and soft amber highlights reflecting off his skin. Cinematic photography style, shallow depth of field, set in a dimly lit luxury private lounge. Minimalist and premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy-UFvI31fdpWxLxJXZYwaemwJ72KTRgbFH_Js2Bbwyq_ne-VFLomoxf8z8TCTOP_JW-4DPTbYBfviBWjrrDuFD47zkL4iFEl7DzRgvVqqDKE4t86tM-t5PX3zxt2D9r9RZB8aPgun1IdGcNAkx1eXVbbX2dzVJlxcRPRKlj3UIsU__OTVTuSkc2lTwok5DFrMvNHDz3VnMjMgYOQjRknXCzrJ18Dlfob-56r2AQd8667dmF4amskr-j_t11xJRZlpXeOjzWsYIOs"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-32 px-12 pb-12 bg-surface min-h-screen">
+<div class="max-w-[1440px] mx-auto">
+<!-- Hero Greeting & Energy Section -->
+<section class="grid grid-cols-12 gap-gutter mb-stack-lg">
+<div class="col-span-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Good evening, Julian.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">The city settles into its quiet rhythm. It is the perfect hour for deep reflection and high-impact planning.</p>
+</div>
+<div class="col-span-4 flex justify-end items-center gap-4">
+<div class="glass-card inner-glow-gold rounded-xl px-6 py-4 flex items-center gap-4">
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-widest">Focus Mode</p>
+<p class="text-headline-md font-headline-md text-tertiary">Active</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="nights_stay" data-weight="fill">nights_stay</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Daily Routine List (Asymmetric Column) -->
+<div class="col-span-4 space-y-gutter">
+<div class="glass-card rounded-xl p-8">
+<div class="flex justify-between items-center mb-stack-lg">
+<h4 class="font-headline-md text-2xl text-on-surface">Evening Routine</h4>
+<span class="text-label-sm font-label-sm text-tertiary px-3 py-1 bg-tertiary/10 rounded-full">65% Done</span>
+</div>
+<div class="space-y-4">
+<!-- Task Item -->
+<div class="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 hover:bg-white/5 transition-all cursor-pointer">
+<div class="w-6 h-6 rounded-full border-2 border-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-tertiary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-on-surface">Digital Sunset</p>
+<p class="text-xs text-on-surface-variant">Disconnecting all devices</p>
+</div>
+<span class="text-xs text-slate-500">20:00</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 hover:bg-white/5 transition-all cursor-pointer">
+<div class="w-6 h-6 rounded-full border-2 border-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-tertiary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-on-surface">Deep Journaling</p>
+<p class="text-xs text-on-surface-variant">Reviewing wins and setbacks</p>
+</div>
+<span class="text-xs text-slate-500">21:30</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 group hover:bg-white/5 transition-all cursor-pointer">
+<div class="w-6 h-6 rounded-full border-2 border-white/20 group-hover:border-tertiary/50 transition-all"></div>
+<div class="flex-grow">
+<p class="font-body-md text-on-surface">Strategic Planning</p>
+<p class="text-xs text-on-surface-variant">Drafting tomorrow's top 3 tasks</p>
+</div>
+<span class="text-xs text-slate-500">22:00</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 group hover:bg-white/5 transition-all cursor-pointer">
+<div class="w-6 h-6 rounded-full border-2 border-white/20 group-hover:border-tertiary/50 transition-all"></div>
+<div class="flex-grow">
+<p class="font-body-md text-on-surface">Mindfulness Meditation</p>
+<p class="text-xs text-on-surface-variant">Calming the cognitive engine</p>
+</div>
+<span class="text-xs text-slate-500">22:30</span>
+</div>
+</div>
+<button class="w-full mt-stack-lg py-4 border border-white/10 rounded-lg font-serif italic text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all">
+                            Add custom ritual +
+                        </button>
+</div>
+<!-- Energy Card -->
+<div class="glass-card rounded-xl p-8 overflow-hidden relative">
+<div class="relative z-10">
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-widest mb-2">Mental Energy</p>
+<h4 class="font-headline-md text-3xl text-on-surface mb-6">Optimized</h4>
+<div class="relative h-2 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-[82%] bg-tertiary shadow-[0_0_15px_rgba(233,193,118,0.5)]"></div>
+</div>
+<div class="flex justify-between mt-3">
+<span class="text-xs text-slate-500">Resting</span>
+<span class="text-xs font-bold text-tertiary">Peak Reflection</span>
+</div>
+</div>
+<!-- Background Glow Effect -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 amber-glow rounded-full"></div>
+</div>
+</div>
+<!-- Main Analytics & Insights (Bento Body) -->
+<div class="col-span-8 grid grid-cols-2 gap-gutter">
+<!-- Analytics Header -->
+<div class="col-span-2 glass-card rounded-xl p-8 flex justify-between items-end">
+<div>
+<p class="text-label-sm font-label-sm text-secondary mb-1">Weekly Performance</p>
+<h4 class="font-headline-md text-headline-md text-on-surface">Consistency Score: 94</h4>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-xs font-bold bg-white/5 border border-white/10 rounded-md text-slate-300">Week</button>
+<button class="px-4 py-2 text-xs font-bold bg-tertiary/10 border border-tertiary/20 rounded-md text-tertiary">Month</button>
+<button class="px-4 py-2 text-xs font-bold bg-white/5 border border-white/10 rounded-md text-slate-300">All Time</button>
+</div>
+</div>
+<!-- Main Visualization Placeholder -->
+<div class="col-span-2 glass-card rounded-xl p-8 h-[340px] flex flex-col">
+<div class="flex-grow flex items-end gap-4">
+<!-- Visualizing data columns with varying opacities for depth -->
+<div class="flex-grow bg-gradient-to-t from-tertiary/20 to-transparent rounded-t-lg h-[40%]"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/30 to-transparent rounded-t-lg h-[60%]"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/40 to-transparent rounded-t-lg h-[85%] border-t border-tertiary/50"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/20 to-transparent rounded-t-lg h-[45%]"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/50 to-transparent rounded-t-lg h-[95%] border-t border-tertiary/50"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/30 to-transparent rounded-t-lg h-[70%]"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/20 to-transparent rounded-t-lg h-[55%]"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/10 to-transparent rounded-t-lg h-[30%]"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/40 to-transparent rounded-t-lg h-[80%] border-t border-tertiary/50"></div>
+<div class="flex-grow bg-gradient-to-t from-tertiary/60 to-transparent rounded-t-lg h-[100%] border-t-2 border-tertiary"></div>
+</div>
+<div class="flex justify-between pt-6 text-[10px] font-label-sm tracking-widest text-slate-500 uppercase">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Today</span>
+</div>
+</div>
+<!-- Lower Bento Items -->
+<div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+</div>
+<p class="font-headline-md text-xl text-on-surface">Cognitive Load</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Your intellectual stamina was 12% higher during tonight's focus session compared to last week.</p>
+</div>
+<div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<p class="font-headline-md text-xl text-on-surface">AI Reflection</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Based on your journal entries, your creative output peaks between 21:00 and 22:30.</p>
+</div>
+<!-- Image Section (Visual Inspiration) -->
+<div class="col-span-2 relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="A wide, cinematic shot of a high-end corporate office at night, overlooking a shimmering metropolis skyline. The interior is minimal with sleek dark wood, glass partitions, and warm amber accent lighting. The city lights outside create a bokeh effect of soft golds and blues. The overall mood is quiet, powerful, and deeply focused, embodying the Executive Nocturne aesthetic with low contrast and premium textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4TdNroTK4NWqE7RvkTgcQmwPbfE4nZBy9cpj8IKI5dnv1Feiehn4h04LTUEGl2vLesRXM4iyc1JPXT0FChWGSIPXWkUoRJk6Vlddq6220pQDAvBEoUD6jKFivuBJrjtK6XjUOOA4jjVqXD3FT91MspKHxm_veXU5Hmy-bWKGyDTohh7zGROai4PNZUvcbUCTTSjIOeHe4BWvV77TCz1mnUz6NwpGzR9KBmuaD2jBO07cP8SmHaL1g2hyKGKqPN8bGQ04lJvTmXd8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-6 left-8">
+<p class="text-label-sm font-label-sm text-tertiary uppercase tracking-[0.2em] mb-1">Evening Perspective</p>
+<h5 class="font-headline-md text-2xl text-on-surface">Quiet clarity is the ultimate luxury.</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#6c7a71",
+                    "secondary-fixed": "#c3ecd7",
+                    "on-primary-fixed-variant": "#005236",
+                    "secondary-fixed-dim": "#a8cfbc",
+                    "primary-fixed": "#6ffbbe",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#002117",
+                    "on-secondary": "#ffffff",
+                    "primary": "#006c49",
+                    "surface-container": "#bbfbe1",
+                    "surface-container-highest": "#b0f0d6",
+                    "surface-container-low": "#cbffe8",
+                    "primary-fixed-dim": "#4edea3",
+                    "on-tertiary-container": "#2f3b39",
+                    "surface-bright": "#e7fff3",
+                    "secondary": "#416656",
+                    "on-primary-fixed": "#002113",
+                    "on-surface-variant": "#3c4a42",
+                    "outline-variant": "#bbcabf",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#bcc9c6",
+                    "tertiary": "#55615f",
+                    "on-tertiary-fixed-variant": "#3d4947",
+                    "surface-tint": "#006c49",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#294e3f",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#b0f0d6",
+                    "on-primary-container": "#00422b",
+                    "on-tertiary-fixed": "#121e1c",
+                    "background": "#e7fff3",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#10b981",
+                    "surface-container-high": "#b6f6db",
+                    "inverse-on-surface": "#befee3",
+                    "tertiary-container": "#98a5a3",
+                    "on-secondary-container": "#476c5b",
+                    "inverse-primary": "#4edea3",
+                    "tertiary-fixed": "#d8e5e2",
+                    "surface-dim": "#a8e7cd",
+                    "on-surface": "#002117",
+                    "secondary-container": "#c3ecd7",
+                    "inverse-surface": "#003829",
+                    "on-secondary-fixed": "#002115",
+                    "surface": "#e7fff3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "element-gap": "12px",
+                    "section-gap": "48px",
+                    "container-margin": "32px",
+                    "unit": "8px",
+                    "card-padding": "24px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "body-lg": ["Lexend"],
+                    "headline-lg": ["Lexend"],
+                    "label-md": ["Lexend"]
+            },
+            "fontSize": {
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full p-4 gap-4 bg-white dark:bg-emerald-950 h-screen w-64 border-r border-emerald-100 dark:border-emerald-800/50 z-50">
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h1 class="font-headline-md text-emerald-700 dark:text-emerald-300 font-bold">Circadian</h1>
+<p class="text-label-sm text-secondary">Rise &amp; Shine</p>
+</div>
+</div>
+<nav class="flex-1 mt-8 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-semibold rounded-lg transition-all hover:translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg transition-all hover:translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-label-md">Daily Routines</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg transition-all hover:translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-label-md">Goal Progress</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg transition-all hover:translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label-md">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 pt-4 border-t border-emerald-100/50">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-label-md shadow-lg shadow-primary/10 hover:scale-[1.02] active:scale-95 transition-all">
+                New Routine
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-0 lg:left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/60 backdrop-blur-md border-b border-emerald-100 dark:border-emerald-800/50 shadow-[0_4px_20px_rgba(16,185,129,0.05)]">
+<div class="flex items-center">
+<span class="text-headline-md font-lexend font-bold tracking-tight text-emerald-700">Vitality</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex bg-secondary-container px-4 py-1.5 rounded-full items-center gap-2">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-secondary-container placeholder-on-secondary-container/60" placeholder="Search data..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-emerald-600 hover:bg-emerald-50 p-2 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-emerald-600 hover:bg-emerald-50 p-2 rounded-full transition-colors" data-icon="settings">settings</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-200">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional and friendly headshot of a young woman with a warm smile, set against a soft-focus morning garden background. The lighting is bright and natural, reflecting a clean light-mode aesthetic. The composition is a close-up portrait that conveys health, vitality, and organizational clarity in a modern wellness app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoYF5hpIaXKeMxdSDqsmj7bGEDRRc-ZlcK8f4WyLznuLQ7qQ0of1UycXUIyZ6HgoKFskYniNgd3cYcruL0k1RpJfDDYzgUYB4ba0mm-DV1r8Qd-1rcNRYihsZiGQZh4qZLG-_MZp4WTF0aBXVPXFJNgM1AhZKPPNDy4HbnRASDH2OV3OKTRWsUtDU7xabvO4Y5DHX2a90_hp5ndfs76qev8F59EUaBoUw36q9A6DPQgykml4x6N9QhFDUS8fI-kdlDF3DPI3mse48"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="pt-24 px-container-margin pb-12 max-w-7xl mx-auto space-y-section-gap">
+<!-- Rise & Shine Header -->
+<section class="flex flex-col md:flex-row justify-between items-end gap-gutter">
+<div class="space-y-2">
+<h2 class="font-headline-xl text-emerald-900 tracking-tight">Rise &amp; Shine, Elena.</h2>
+<p class="text-body-lg text-secondary/80">You're 65% through your morning window. Keep the momentum!</p>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white rounded-2xl border border-secondary-fixed shadow-sm">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="wb_twilight">wb_twilight</span>
+</div>
+<div>
+<p class="text-label-sm uppercase tracking-widest text-secondary opacity-60">Next Event</p>
+<p class="font-label-md text-on-background">Morning Focus Flow • 09:00 AM</p>
+</div>
+</div>
+</section>
+<!-- Main Grid Layout (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Morning Rituals (Col 1-7) -->
+<section class="md:col-span-7 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-emerald-800">Morning Rituals</h3>
+<span class="text-label-md text-primary font-semibold cursor-pointer">Edit List</span>
+</div>
+<div class="bg-white rounded-3xl border border-mint-200 p-card-padding shadow-sm space-y-1">
+<!-- Ritual Item -->
+<div class="flex items-center gap-4 py-4 border-b border-secondary-fixed-dim/30 hover:bg-surface-bright/50 transition-colors group px-2 rounded-xl">
+<div class="w-6 h-6 border-2 border-primary rounded-md flex items-center justify-center cursor-pointer group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary text-lg font-bold" data-icon="check" style="display:none">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-on-background">Hydration (500ml)</p>
+<p class="text-label-sm text-secondary/60">06:45 AM • Completed</p>
+</div>
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+</div>
+</div>
+<!-- Ritual Item (Active/Pending) -->
+<div class="flex items-center gap-4 py-4 border-b border-secondary-fixed-dim/30 hover:bg-surface-bright/50 transition-colors px-2 rounded-xl">
+<div class="w-6 h-6 border-2 border-primary-fixed-dim rounded-md bg-white cursor-pointer"></div>
+<div class="flex-1">
+<p class="font-label-md text-on-background">Mindful Meditation</p>
+<p class="text-label-sm text-secondary/60">07:15 AM • 10 mins</p>
+</div>
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="self_improvement">self_improvement</span>
+</div>
+</div>
+<!-- Ritual Item (Pending) -->
+<div class="flex items-center gap-4 py-4 border-b border-secondary-fixed-dim/30 hover:bg-surface-bright/50 transition-colors px-2 rounded-xl">
+<div class="w-6 h-6 border-2 border-primary-fixed-dim rounded-md bg-white cursor-pointer"></div>
+<div class="flex-1">
+<p class="font-label-md text-on-background">Light Stretching</p>
+<p class="text-label-sm text-secondary/60">07:30 AM • 15 mins</p>
+</div>
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+</div>
+</div>
+<!-- Ritual Item (Pending) -->
+<div class="flex items-center gap-4 py-4 hover:bg-surface-bright/50 transition-colors px-2 rounded-xl">
+<div class="w-6 h-6 border-2 border-primary-fixed-dim rounded-md bg-white cursor-pointer"></div>
+<div class="flex-1">
+<p class="font-label-md text-on-background">Deep Work Planning</p>
+<p class="text-label-sm text-secondary/60">08:00 AM • 5 mins</p>
+</div>
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Energy Visualization (Col 8-12) -->
+<section class="md:col-span-5 flex flex-col gap-gutter">
+<div class="bg-white rounded-3xl border border-secondary-fixed p-card-padding shadow-sm flex flex-col items-center justify-center text-center">
+<h3 class="font-headline-md text-emerald-800 mb-8 w-full text-left">Daily Energy</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- SVG Progress Circle -->
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-secondary-fixed-dim/30" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary-container" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="193.5" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-headline-xl text-emerald-900">82%</span>
+<span class="text-label-sm text-secondary font-bold uppercase tracking-widest">Optimized</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-4 w-full">
+<div class="p-3 bg-surface-bright rounded-2xl">
+<p class="text-label-sm text-secondary/70">Peak Hour</p>
+<p class="font-label-md text-on-background">10:30 AM</p>
+</div>
+<div class="p-3 bg-surface-bright rounded-2xl">
+<p class="text-label-sm text-secondary/70">Focus Score</p>
+<p class="font-label-md text-on-background">9.4/10</p>
+</div>
+</div>
+</div>
+<!-- Goal Progress Small Cards -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-2xl border border-secondary-fixed shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="steps">steps</span>
+</div>
+<span class="text-label-sm text-primary font-bold">78%</span>
+</div>
+<p class="text-label-sm text-secondary">Step Goal</p>
+<p class="font-label-md text-on-background">7,842 / 10k</p>
+<div class="mt-2 w-full h-1.5 bg-secondary-fixed rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[78%]"></div>
+</div>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-secondary-fixed shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="w-8 h-8 bg-on-tertiary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<span class="text-label-sm text-on-tertiary-container font-bold">42%</span>
+</div>
+<p class="text-label-sm text-secondary">Calorie Burn</p>
+<p class="font-label-md text-on-background">840 / 2k</p>
+<div class="mt-2 w-full h-1.5 bg-secondary-fixed rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container w-[42%]"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Contextual Insight Card -->
+<section class="bg-gradient-to-r from-primary-container to-primary text-white p-8 rounded-[40px] shadow-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
+<div class="flex-1 space-y-4 z-10">
+<div class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-label-sm">MORNING TIP</div>
+<h3 class="text-headline-lg">Sunlight exposure within 30 minutes of waking boosts evening melatonin.</h3>
+<p class="text-body-md opacity-90 max-w-lg">Current outdoor light is optimal at 4,200 lux. Step onto your balcony for 5 minutes to anchor your circadian rhythm.</p>
+<button class="bg-white text-primary px-6 py-2.5 rounded-full font-label-md hover:bg-emerald-50 transition-colors">Log Light Exposure</button>
+</div>
+<div class="relative w-full md:w-1/3 aspect-video md:aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+<img alt="Morning Light" class="w-full h-full object-cover" data-alt="A bright and airy photograph of a modern, minimalist apartment balcony during a sunny morning. Soft golden sunlight streams across the floor, highlighting vibrant green potted plants. The atmosphere is peaceful and invigorating, emphasizing a clean, light-mode design language that promotes wellness and a fresh start to the day." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQbO8gwsEdDbB4rjf5AkogZRNn5cZ2zRFayBC4rI4XU7n92zedIt6-fLMDBzM_X5D0RDUL6uhWqfAN-kAlfFEXMkf6Yq7cyU3yQkP0IS7GzpPfMu9uKzGvBlL4n2xm9n08DrIQcWqhWsAdWKydWyOsa9TqNH6rn6Wgy7agcJWS0H5QhKH_cKyaspZemz-yn_GMFgEf-is3hHKYXjoojwf4T7avvuSkj7MIReIhTXOr16DAuInd7UrPz0lQ56QFvDgYal8KfR70hQY"/>
+</div>
+<!-- Abstract Glass Circles -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-10 left-1/2 w-32 h-32 bg-emerald-300/20 rounded-full blur-2xl"></div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-lg border-t border-emerald-100 flex items-center justify-around z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="wb_sunny">wb_sunny</span>
+<span class="text-[10px] font-label-sm">Routine</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="text-[10px] font-label-sm">Goals</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-label-sm">Profile</span>
+</button>
+</nav>
+<!-- FAB -->
+<button class="fixed bottom-24 right-8 lg:bottom-12 lg:right-12 w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+<span class="absolute right-full mr-4 px-3 py-1.5 bg-emerald-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Log Activity</span>
+</button>
+</body></html>
