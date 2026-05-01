@@ -10,22 +10,23 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Lifestyle Tracker',
-        short_name: 'Tracker',
+        name: 'Circadian Lifestyle Tracker',
+        short_name: 'Circadian',
         description: 'Dynamic Circadian Lifestyle Tracker',
-        theme_color: '#000000',
-        background_color: '#000000',
+        theme_color: '#131313',
+        background_color: '#131313',
         display: 'standalone',
         icons: [
           {
-            src: 'https://cdn-icons-png.flaticon.com/512/3233/3233483.png',
+            src: 'logo.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'https://cdn-icons-png.flaticon.com/512/3233/3233483.png',
+            src: 'logo.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       }
